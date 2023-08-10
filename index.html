@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/reset.css">
     <link rel="stylesheet" href="./assets/styles.css">
 </head>
@@ -13,66 +15,47 @@
         <div>
             <div id="searchContainer">
                 <h2>Search for a City:</h2>
-                <input type="text" placeholder="City" id="cityInput">
-                <div><button id="searchBtn">Search</button></div>
+                <input type="text" placeholder="City" name="cityInput" id="cityInput">
+                <div><button type="submit" id="searchBtn">Search</button></div>
             </div>
             <p class="divider">_____________________________</p>
-            <div>
-
+            <div id="search-history-container" class="row m-0 search-history-container">
+  
             </div>
         </div>
         <div>
             <div id="current">
-                <h2 id="currentCity">Los Angeles</h2>
-                <p class="date">0/0/0000</p>
-                <img src="" class="imgclass" id="img1" alt="img1">
-                <p class="temp">Temp:  °F</p>
-                <p class="wind">Wind:  MPH</p>
-                <p class="humidity">Humidity:  %</p>
+                
             </div>
             <h3>5-Day Forecast:</h3>
             <div id="weatherContainer">
                 <div id="iconsContainer">
-                    <div class="icons">
-                        <p id="date1">0/0/0000</p>
+                    <div class="icons" id="icon1">
+                        <p id="date1"></p>
                         <img src="" class="imgclass" id="img1" alt="img1">
-                        <p class="temp">Temp:  °F</p>
-                        <p class="wind">Wind:  MPH</p>
-                        <p class="humidity">Humidity:  %</p>
                     </div>
-                    <div class="icons">
-                        <p id="date2">0/0/0000</p>
+                    <div class="icons" id="icon2">
+                        <p id="date2"></p>
                         <img src="" class="imgclass" id="img2" alt="img2">
-                        <p class="temp">Temp:  °F</p>
-                        <p class="wind">Wind:  MPH</p>
-                        <p class="humidity">Humidity:  %</p>
                     </div>
-                    <div class="icons">
-                        <p id="date3">0/0/0000</p>
+                    <div class="icons" id="icon3">
+                        <p id="date3"></p>
                         <img src="" class="imgclass" id="img3" alt="img3">
-                        <p class="temp">Temp:  °F</p>
-                        <p class="wind">Wind:  MPH</p>
-                        <p class="humidity">Humidity:  %</p>
                     </div>
-                    <div class="icons">
-                        <p id="date4">0/0/0000</p>
+                    <div class="icons" id="icon4">
+                        <p id="date4"></p>
                         <img src="" class="imgclass" id="img4" alt="img4">
-                        <p class="temp">Temp:  °F</p>
-                        <p class="wind">Wind:  MPH</p>
-                        <p class="humidity">Humidity:  %</p>
                     </div>
-                    <div class="icons">
-                        <p id="date5">0/0/0000</p>
+                    <div class="icons" id="icon5">
+                        <p id="date5"></p>
                         <img src="" class="imgclass" id="img5" alt="img5">
-                        <p class="temp">Temp:  °F</p>
-                        <p class="wind">Wind:  MPH</p>
-                        <p class="humidity">Humidity:  %</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-
-    <script src="main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="./assets/script.js"></script>
 </body>
