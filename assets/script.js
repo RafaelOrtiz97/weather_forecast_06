@@ -10,24 +10,29 @@ function renderWeather(weather) {
     //targets current container
     var results = document.querySelector("#current");
 
+    //current date
     var city = document.createElement("h2");
     city.textContent = weather.city.name + " " + moment().format("M/D/YYYY");
     results.append(city);
 
+    //weather icon
     var iconcode = weather.list[i].weather[0].icon;
     var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
     var icon = document.createElement("img");
     icon.src = iconurl;
     results.append(icon);
 
+    //current temp
     var temp = document.createElement("p");
     temp.textContent = "Temp: " + (weather.list[0].main.temp - 200).toFixed(1) + " °F";
     results.append(temp);
 
+    //current wind
     var wind = document.createElement("p");
     wind.textContent = "Wind: " + weather.list[0].wind.speed + " MPH";
     results.append(wind);
 
+    //current humidity
     var humidity = document.createElement("p");
     humidity.textContent = "Humidity: " + weather.list[0].main.humidity + " %";
     results.append(humidity);
@@ -47,27 +52,33 @@ function renderFutureWeather(weather) {
     //loops data for each day
     for (var i = 1; i <= 5; i++) {
         
+        //selects icon id
         var results = document.querySelector("#icon" + [i]);
   
+        //dates for 5 day forecast
         var day = document.createElement("p");
         date = moment().add(i, "d").format("M/D/YYYY");
         day.textContent = date;
         results.append(day);
 
+        //icons for 5 day forecast
         var iconcode = weather.list[i].weather[0].icon;
         var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
         var icon = document.createElement("img");
         icon.src = iconurl;
         results.append(icon);
 
+        //temp for 5 day forecast
         var temp = document.createElement("p");
         temp.textContent = "Temp: " + (weather.list[i].main.temp - 200).toFixed(1) + " °F";
         results.append(temp);
 
+        //wind for 5 day forecast
         var wind = document.createElement("p");
         wind.textContent = "Wind: " + weather.list[i].wind.speed + " MPH";
         results.append(wind);
 
+        //humidity for 5 day forecast
         var humidity = document.createElement("p");
         humidity.textContent = "Humidity: " + weather.list[i].main.humidity + " %";
         results.append(humidity);
