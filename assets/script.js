@@ -14,6 +14,12 @@ function renderWeather(weather) {
     city.textContent = weather.city.name + " " + moment().format("M/D/YYYY");
     results.append(city);
 
+    var iconcode = weather.list[i].weather[0].icon;
+    var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+    var icon = document.createElement("img");
+    icon.src = iconurl;
+    results.append(icon);
+
     var temp = document.createElement("p");
     temp.textContent = "Temp: " + (weather.list[0].main.temp - 200).toFixed(1) + " °F";
     results.append(temp);
@@ -47,6 +53,12 @@ function renderFutureWeather(weather) {
         date = moment().add(i, "d").format("M/D/YYYY");
         day.textContent = date;
         results.append(day);
+
+        var iconcode = weather.list[i].weather[0].icon;
+        var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+        var icon = document.createElement("img");
+        icon.src = iconurl;
+        results.append(icon);
 
         var temp = document.createElement("p");
         temp.textContent = "Temp: " + (weather.list[i].main.temp - 200).toFixed(1) + " °F";
